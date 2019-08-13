@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='QOASecurityUtil',
-    version='1.1.7',
+    version='1.1.8',
     description=(
         'QOAToken工具'
     ),

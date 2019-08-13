@@ -11,9 +11,9 @@ def des_encrypt(content, password):
 
 
 def make_token(appcode, password):
-    return 'token__' + str(des_encrypt('%s__%s' % (appcode, str(
+    try:
+        return 'token__' + des_encrypt('%s__%s' % (appcode, str(
+            int(time.time() * 1000))), password)
+    except:
+        return 'token__' + str(des_encrypt('%s__%s' % (appcode, str(
             int(time.time() * 1000))), password), 'utf-8')
-
-
-if __name__ == '__main__':
-    print(make_token("cm_mportal_app", "F6F8CB52"))
